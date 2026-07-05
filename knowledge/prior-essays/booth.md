@@ -1,6 +1,6 @@
-# Chicago Booth — Essays Submitted in the PRIOR Application Cycle
+# Chicago Booth — Prior-Cycle Essay DRAFTS (never submitted)
 
-(Historical record of what this school's AdCom has already read.)
+(First-time application: the AdCom has seen none of this.)
 
 Booth Essay Drafts
 Essay 1: How will the Booth MBA help you achieve your immediate and long-term post-MBA career goals? (250 word minimum)

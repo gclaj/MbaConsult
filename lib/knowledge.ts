@@ -40,8 +40,12 @@ export function getSchoolPlaybook(
   }
 }
 
-// Essays actually submitted to this school in the prior cycle
-// (knowledge/prior-essays/<key>.md). What the AdCom has already read.
+// Schools where the prior-cycle essays were actually SUBMITTED — this cycle
+// is a reapplication there, and the AdCom reads new materials side-by-side.
+// Everywhere else the prior-essay files are unsubmitted drafts.
+const REAPPLICATION_KEYS = new Set(["columbia", "wharton", "tuck"]);
+
+// Prior-cycle essay work for this school (knowledge/prior-essays/<key>.md).
 export function priorEssaysBlock(school: string): string {
   const key = matchSchoolKey(school);
   if (!key) return "";
@@ -54,7 +58,10 @@ export function priorEssaysBlock(school: string): string {
   } catch {
     return "";
   }
-  return `\nPRIOR-CYCLE ESSAYS — the essays the candidate actually submitted to THIS school last year. This is what the AdCom has already read; for reapplications the new materials are read side-by-side with these. Rules: maintain consistency of character and goals-evolution (refine, never reverse); never recycle sentences or scenes verbatim — reference or build on them instead; know which stories this AdCom has already seen so new materials add NEW evidence rather than repeating. These essays are also authentic samples of the candidate's real essay voice:\n<prior_essays>\n${text}\n</prior_essays>\n`;
+  const header = REAPPLICATION_KEYS.has(key)
+    ? `PRIOR-CYCLE ESSAYS (SUBMITTED — this school is a REAPPLICATION). This is what the AdCom has already read; new materials are read side-by-side with these. Rules: maintain consistency of character and goals-evolution (refine, never reverse); never recycle sentences or scenes verbatim — reference or build on them instead; know which stories this AdCom has already seen so new materials add NEW evidence rather than repeating. These essays are also authentic samples of the candidate's real essay voice:`
+    : `PRIOR-CYCLE ESSAY DRAFTS (NEVER SUBMITTED — this school is a FIRST-TIME application). The AdCom has seen none of this, so there is NO consistency constraint to last year's framing; the current candidate context governs the narrative freely. Use these drafts only as authentic samples of the candidate's essay voice and as an inventory of stories and phrasings the candidate has developed:`;
+  return `\n${header}\n<prior_essays>\n${text}\n</prior_essays>\n`;
 }
 
 // Standing strategic context about the candidate (knowledge/candidate.md):

@@ -1,6 +1,6 @@
-# Wharton (UPenn) — Essays Drafted/Submitted in the PRIOR Application Cycle
+# Wharton (UPenn) — Essays SUBMITTED in the Prior Application Cycle
 
-(Historical record of prior-cycle Wharton essay work.)
+(This school is a reapplication: the AdCom has read these.)
 
 Wharton Essay Drafts
 Essay 1A: What is your immediate post-MBA professional goal? (50 words)

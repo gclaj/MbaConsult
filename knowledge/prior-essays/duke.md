@@ -1,6 +1,6 @@
-# Duke Fuqua — Essays Submitted in the PRIOR Application Cycle
+# Duke Fuqua — Prior-Cycle Essay DRAFTS (never submitted)
 
-(Historical record of what this school's AdCom has already read.)
+(First-time application: the AdCom has seen none of this.)
 
 Duke Essay Drafts
 Essay 1: The 'Team Fuqua' spirit and community is one of the things that sets the MBA experience apart, and it is a concept that extends beyond the student body to include faculty, staff, and administration. Please share with us “25 Random Things” about you.

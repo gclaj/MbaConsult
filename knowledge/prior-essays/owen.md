@@ -1,6 +1,6 @@
-# Vanderbilt Owen — Essays Submitted in the PRIOR Application Cycle
+# Vanderbilt Owen — Prior-Cycle Essay DRAFTS (never submitted)
 
-(Historical record of what this school's AdCom has already read.)
+(First-time application: the AdCom has seen none of this.)
 
 Owen Essay Drafts
 Essay 1: As you contemplate your post-MBA aspirations, share two post-MBA career paths you aim to explore during the Vanderbilt MBA program. Please articulate your rationale and enthusiasm for these choices, and include the skills you have developed that will help you achieve your career goals. (200 words)

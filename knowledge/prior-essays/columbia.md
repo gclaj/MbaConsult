@@ -1,6 +1,6 @@
-# Columbia Business School — Essays Submitted in the PRIOR Application Cycle
+# Columbia Business School — Essays SUBMITTED in the Prior Application Cycle
 
-(Historical record of what this school's AdCom has already read.)
+(This school is a reapplication: the AdCom has read these.)
 
 Columbia Essay Drafts
 Essay 1: Through your resume and recommendations, we have a clear sense of your professional path to date. What are your career goals over the next three to five years and what is your long-term dream job? (Maximum 500 Words)

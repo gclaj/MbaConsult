@@ -1,6 +1,6 @@
-# Tuck (Dartmouth) — Essays Submitted in the PRIOR Application Cycle
+# Tuck (Dartmouth) — Essays SUBMITTED in the Prior Application Cycle
 
-(Historical record of what this school's AdCom has already read.)
+(This school is a reapplication: the AdCom has read these.)
 
 Tuck Essay Drafts
 Pre-Essay: Share your short-term goals. Share your long-term goals. (50 words each)

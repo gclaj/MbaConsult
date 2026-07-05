@@ -105,12 +105,14 @@ standalone "SSA growth investing via MBB" — that exact framing is retired.
   missing commercial toolkit + brand. US MBA over international; get Africa
   depth via programming (Lauder, HBS Africa, Stanford Seed), not domicile.
 
-## Prior-cycle essays on file (knowledge/prior-essays/)
-- Full prior-cycle essay sets on file for: Columbia, Tuck, Booth, Duke Fuqua,
-  Vanderbilt Owen, and Wharton (Wharton set may be drafts — confirm whether it
-  was submitted; if submitted, Wharton is also a reapplication and its
-  reapplicant rules apply). Auto-injected when the target school matches —
-  the side-by-side record for reapplications and authentic voice samples.
+## Prior-cycle essays on file (knowledge/prior-essays/) — CONFIRMED status
+- REAPPLICATIONS (essays were SUBMITTED; AdCom reads side-by-side; refine,
+  never reverse): **Columbia, Wharton, Tuck**.
+- FIRST-TIME applications (essay sets were drafts, never submitted; no
+  consistency constraint — current narrative governs freely): **Booth, Duke
+  Fuqua, Vanderbilt Owen**, and every other school.
+- All sets auto-injected when the target school matches, as voice samples and
+  story inventory.
 - Story inventory already used last cycle (reference, don't repeat verbatim):
   Jacques / cinderblock home outside Yaoundé (origin story — the CBS
   reapplicant essay deliberately calls it back); Lauren / All-American
@@ -259,11 +261,15 @@ Open fills before submission:
 ## Open questions (surface these when relevant)
 1. Which thesis governs at NON-Columbia schools — A (regulated-enterprise AI)
    vs B (critical minerals/Africa external-affairs)? Columbia is locked to the
-   bridged critical-minerals spine; other schools still need the call.
+   bridged critical-minerals spine. IMPORTANT CONSTRAINT: Wharton and Tuck are
+   also REAPPLICATIONS, so refine-don't-reverse applies there too — their
+   prior submitted goals (Wharton: Francophone-region consulting → PE; Tuck:
+   Africa FinTech) bridge far more naturally to a Thesis-B-flavored evolution
+   like Columbia's than to Thesis A. Thesis A travels freely only at
+   FIRST-TIME schools (Booth, Duke, Owen, and any new additions).
    Signal (not yet confirmed): Chris re-shared the Thesis A session most
-   recently, suggesting it is front-of-mind as the governing thesis — lean
-   Thesis A for non-Columbia schools when a recommendation is needed, but
-   flag it as unconfirmed.
+   recently, suggesting it is front-of-mind — lean Thesis A at first-time
+   schools when a recommendation is needed, but flag it as unconfirmed.
 2. Realized retake score → final school list; then fill the CBS essay's score
    placeholder and choose whether to lead with quant.
 3. Identity-framing confirmation (guardrail above).
