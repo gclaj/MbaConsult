@@ -44,7 +44,7 @@ export function candidateContextBlock(): string {
       path.join(process.cwd(), "knowledge", "candidate.md"),
       "utf-8",
     );
-    return `\nCANDIDATE STRATEGIC CONTEXT — standing background on this candidate's application history, positioning strategy, and constraints. If the candidate is a REAPPLICANT to the target school, treat the application as a reapplication: the fit analysis must weigh what has changed since the prior attempt, the interview must surface growth-since-last-application stories, and the essays must demonstrate that growth concretely:\n<candidate_context>\n${text}\n</candidate_context>\n`;
+    return `\nCANDIDATE STRATEGIC CONTEXT — standing background on this candidate's application history, positioning strategy, and constraints. If the candidate is a REAPPLICANT to the target school, treat the application as a reapplication: the fit analysis must weigh what has changed since the prior attempt, the interview must surface growth-since-last-application stories, and the essays must demonstrate that growth concretely. If the context lists multiple LIVE career theses, the fit analysis must state which thesis fits THIS school best and why (in the positioning field), interview questions should gather stories usable under the recommended thesis, and each essay must run on exactly one thesis spine — the one recommended for this school unless the candidate directs otherwise:\n<candidate_context>\n${text}\n</candidate_context>\n`;
   } catch {
     return "";
   }
