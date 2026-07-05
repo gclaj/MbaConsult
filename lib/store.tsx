@@ -8,6 +8,7 @@ import {
   useState,
   type ReactNode,
 } from "react";
+import { EMPTY_CANDIDATE, PROFILES, type ProfileId } from "./profiles";
 import type {
   CandidateProfile,
   EssayDraft,
@@ -17,25 +18,8 @@ import type {
   Story,
 } from "./types";
 
-export const EMPTY_CANDIDATE: CandidateProfile = {
-  name: "",
-  targetSchool: "",
-  gpa: "",
-  undergrad: "",
-  major: "",
-  testType: "GMAT",
-  testScore: "",
-  yearsExperience: "",
-  industry: "",
-  currentRole: "",
-  employer: "",
-  shortTermGoal: "",
-  longTermGoal: "",
-  leadership: "",
-  extracurriculars: "",
-  background: "",
-  writingSample: "",
-};
+export { EMPTY_CANDIDATE };
+export type { ProfileId };
 
 export interface AppState {
   step: number;
@@ -49,9 +33,8 @@ export interface AppState {
   drafts: EssayDraft[];
 }
 
-const INITIAL: AppState = {
+const BASE: Omit<AppState, "candidate"> = {
   step: 0,
-  candidate: EMPTY_CANDIDATE,
   dossier: "",
   notes: "",
   intel: null,
@@ -61,9 +44,43 @@ const INITIAL: AppState = {
   drafts: [],
 };
 
-const STORAGE_KEY = "mba-consult-state-v1";
+function initialFor(profile: ProfileId): AppState {
+  return { ...BASE, candidate: PROFILES[profile].candidate };
+}
+
+const PROFILE_KEY = "mba-consult-active-profile";
+const stateKey = (profile: ProfileId) => `mba-consult-state-v2:${profile}`;
+const LEGACY_KEY = "mba-consult-state-v1";
+
+function loadState(profile: ProfileId): AppState {
+  try {
+    const saved = localStorage.getItem(stateKey(profile));
+    if (saved) return { ...initialFor(profile), ...JSON.parse(saved) };
+    if (profile === "chris") {
+      // migrate pre-profiles single-user state into the Chris profile
+      const legacy = localStorage.getItem(LEGACY_KEY);
+      if (legacy) {
+        const parsed = JSON.parse(legacy) as Partial<AppState>;
+        localStorage.removeItem(LEGACY_KEY);
+        return {
+          ...initialFor(profile),
+          ...parsed,
+          candidate: {
+            ...PROFILES.chris.candidate,
+            ...(parsed.candidate?.targetSchool ? parsed.candidate : {}),
+          },
+        };
+      }
+    }
+  } catch {
+    // corrupted state — start fresh
+  }
+  return initialFor(profile);
+}
 
 interface StoreValue {
+  profile: ProfileId;
+  setProfile: (profile: ProfileId) => void;
   state: AppState;
   update: (patch: Partial<AppState>) => void;
   reset: () => void;
@@ -72,46 +89,52 @@ interface StoreValue {
 const StoreContext = createContext<StoreValue | null>(null);
 
 export function StoreProvider({ children }: { children: ReactNode }) {
-  const [state, setState] = useState<AppState>(INITIAL);
+  const [profile, setProfileState] = useState<ProfileId>("chris");
+  const [state, setState] = useState<AppState>(() => initialFor("chris"));
   const [hydrated, setHydrated] = useState(false);
 
   useEffect(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved) setState({ ...INITIAL, ...JSON.parse(saved) });
-    } catch {
-      // corrupted state — start fresh
-    }
+    const saved = localStorage.getItem(PROFILE_KEY);
+    const active: ProfileId = saved === "guest" ? "guest" : "chris";
+    setProfileState(active);
+    setState(loadState(active));
     setHydrated(true);
   }, []);
 
   useEffect(() => {
     if (!hydrated) return;
     try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+      localStorage.setItem(stateKey(profile), JSON.stringify(state));
     } catch {
       // storage full — dossiers can be large; drop the free-text dossier
       try {
         localStorage.setItem(
-          STORAGE_KEY,
+          stateKey(profile),
           JSON.stringify({ ...state, dossier: "" }),
         );
       } catch {
         // give up silently
       }
     }
-  }, [state, hydrated]);
+  }, [state, profile, hydrated]);
 
   const value = useMemo<StoreValue>(
     () => ({
+      profile,
+      setProfile: (next) => {
+        if (next === profile) return;
+        localStorage.setItem(PROFILE_KEY, next);
+        setProfileState(next);
+        setState(loadState(next));
+      },
       state,
       update: (patch) => setState((s) => ({ ...s, ...patch })),
       reset: () => {
-        localStorage.removeItem(STORAGE_KEY);
-        setState(INITIAL);
+        localStorage.removeItem(stateKey(profile));
+        setState(initialFor(profile));
       },
     }),
-    [state],
+    [state, profile],
   );
 
   if (!hydrated) return null;

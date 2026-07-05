@@ -10,7 +10,7 @@ function scoreColor(score: number): string {
 }
 
 export default function StepFit() {
-  const { state, update } = useStore();
+  const { state, update, profile } = useStore();
   const [running, setRunning] = useState(false);
   const [error, setError] = useState("");
 
@@ -26,6 +26,7 @@ export default function StepFit() {
           intel: state.intel,
           dossier: state.dossier,
           notes: state.notes,
+          profile,
         }),
       });
       const data = await res.json();

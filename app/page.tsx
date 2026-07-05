@@ -33,7 +33,7 @@ function stepUnlocked(step: number, state: ReturnType<typeof useStore>["state"])
 }
 
 function Wizard() {
-  const { state, update, reset } = useStore();
+  const { state, update, reset, profile, setProfile } = useStore();
 
   return (
     <div className="container">
@@ -41,18 +41,48 @@ function Wizard() {
         <h1 className="logo">
           AdCom<span>Pilot</span>
         </h1>
-        <button
-          className="ghost"
-          onClick={() => {
-            if (confirm("Start over? All progress will be erased.")) reset();
-          }}
-        >
-          Start over
-        </button>
+        <div className="profile-tabs">
+          <button
+            className={`step-chip ${profile === "chris" ? "active" : ""}`}
+            onClick={() => setProfile("chris")}
+            title="Pre-loaded with Chris's full dossier: strategic context, prior essays, reapplication status"
+          >
+            Chris Lajeunesse
+          </button>
+          <button
+            className={`step-chip ${profile === "guest" ? "active" : ""}`}
+            onClick={() => setProfile("guest")}
+            title="Blank profile for another applicant — no personal data preloaded"
+          >
+            Guest
+          </button>
+          <button
+            className="ghost"
+            onClick={() => {
+              if (
+                confirm(
+                  `Start over for the "${profile}" profile? Its progress will be erased.`,
+                )
+              )
+                reset();
+            }}
+          >
+            Start over
+          </button>
+        </div>
       </header>
       <p className="tagline">
         Your MBA consultant and seasoned AdCom — research, fit scoring, story
         discovery, and essays in your own voice.
+        {profile === "chris" && (
+          <>
+            {" "}
+            <b style={{ color: "var(--green)" }}>
+              Chris mode: strategic context, prior essays, and reapplication
+              rules load automatically.
+            </b>
+          </>
+        )}
       </p>
 
       <nav className="stepper">

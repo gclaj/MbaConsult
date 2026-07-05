@@ -29,6 +29,7 @@ interface InterviewRequest {
   intel: SchoolIntel;
   fit: FitProfile;
   notes?: string;
+  profile?: string;
   question?: InterviewQuestion;
   answer?: string;
   priorAttempt?: { answer: string; pushback: string };
@@ -51,9 +52,9 @@ export async function POST(req: Request) {
           {
             role: "user",
             content: `${fitContextBlock(body.intel, body.fit)}
-${playbookBlock(body.intel.school)}${priorEssaysBlock(body.intel.school)}${notesBlock(body.notes)}
+${playbookBlock(body.intel.school)}${priorEssaysBlock(body.intel.school, body.profile)}${notesBlock(body.notes)}
 ${candidateSummary(body.candidate)}
-${candidateContextBlock()}
+${candidateContextBlock(body.profile)}
 Generate the story-discovery questions. Use the exact essay titles from the dossier's essays array as essayTitle.`,
           },
         ],
@@ -81,9 +82,9 @@ Generate the story-discovery questions. Use the exact essay titles from the doss
           {
             role: "user",
             content: `${fitContextBlock(body.intel, body.fit)}
-${playbookBlock(body.intel.school)}${priorEssaysBlock(body.intel.school)}${notesBlock(body.notes)}
+${playbookBlock(body.intel.school)}${priorEssaysBlock(body.intel.school, body.profile)}${notesBlock(body.notes)}
 ${candidateSummary(body.candidate)}
-${candidateContextBlock()}
+${candidateContextBlock(body.profile)}
 INTERVIEW QUESTION (essay: ${body.question.essayTitle})
 Question: ${body.question.question}
 Purpose: ${body.question.purpose}

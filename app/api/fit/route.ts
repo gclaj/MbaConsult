@@ -12,11 +12,12 @@ export const runtime = "nodejs";
 export const maxDuration = 300;
 
 export async function POST(req: Request) {
-  const { candidate, intel, dossier, notes } = (await req.json()) as {
+  const { candidate, intel, dossier, notes, profile } = (await req.json()) as {
     candidate: CandidateProfile;
     intel: SchoolIntel;
     dossier: string;
     notes?: string;
+    profile?: string;
   };
 
   try {
@@ -38,9 +39,9 @@ ${dossier}
 
 STRUCTURED SCHOOL DATA:
 ${JSON.stringify(intel, null, 1)}
-${playbookBlock(intel.school)}${priorEssaysBlock(intel.school)}${notesBlock(notes)}
+${playbookBlock(intel.school)}${priorEssaysBlock(intel.school, profile)}${notesBlock(notes)}
 ${candidateSummary(candidate)}
-${candidateContextBlock()}
+${candidateContextBlock(profile)}
 
 Produce the complete fit profile. Include one essayStrategy entry for EVERY essay in the structured school data, using the exact essay title.`,
         },

@@ -28,6 +28,7 @@ interface EssayRequest {
   fit: FitProfile;
   stories: Story[];
   notes?: string;
+  profile?: string;
   essay: EssayPrompt;
   previousDraft?: string;
   revisionNotes?: string;
@@ -48,9 +49,9 @@ export async function POST(req: Request) {
       : "";
 
   const userContent = `${fitContextBlock(intel, fit)}
-${playbookBlock(intel.school)}${priorEssaysBlock(intel.school)}${notesBlock(body.notes)}
+${playbookBlock(intel.school)}${priorEssaysBlock(intel.school, body.profile)}${notesBlock(body.notes)}
 ${candidateSummary(candidate)}
-${candidateContextBlock()}
+${candidateContextBlock(body.profile)}
 
 ACCEPTED STORIES FROM THE DISCOVERY INTERVIEW (primary raw material — prefer stories tagged to this essay, but borrow details from others where they strengthen the narrative without duplicating content across essays):
 ${storiesBlock(relevantStories)}

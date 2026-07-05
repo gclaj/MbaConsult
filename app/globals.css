@@ -56,6 +56,12 @@ h1.logo span {
   margin: 0 0 24px;
 }
 
+.profile-tabs {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
 /* Stepper */
 .stepper {
   display: flex;

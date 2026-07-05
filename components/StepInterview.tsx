@@ -5,7 +5,7 @@ import { useStore } from "@/lib/store";
 import type { Story, StoryEvaluation } from "@/lib/types";
 
 export default function StepInterview() {
-  const { state, update } = useStore();
+  const { state, update, profile } = useStore();
   const [loading, setLoading] = useState(false);
   const [evaluating, setEvaluating] = useState(false);
   const [error, setError] = useState("");
@@ -35,6 +35,7 @@ export default function StepInterview() {
           intel: state.intel,
           fit: state.fit,
           notes: state.notes,
+          profile,
         }),
       });
       const data = await res.json();
@@ -65,6 +66,7 @@ export default function StepInterview() {
           intel: state.intel,
           fit: state.fit,
           notes: state.notes,
+          profile,
           question,
           answer,
           priorAttempt,

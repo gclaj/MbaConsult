@@ -10,7 +10,7 @@ function wordCount(text: string): number {
 }
 
 function EssayCard({ essay }: { essay: EssayPrompt }) {
-  const { state, update } = useStore();
+  const { state, update, profile } = useStore();
   const draft = state.drafts.find((d) => d.essayTitle === essay.title);
   const [running, setRunning] = useState(false);
   const [error, setError] = useState("");
@@ -41,6 +41,7 @@ function EssayCard({ essay }: { essay: EssayPrompt }) {
           fit: state.fit,
           stories: state.stories,
           notes: state.notes,
+          profile,
           essay,
           previousDraft: revise ? draft?.text : undefined,
           revisionNotes: revise ? revisionNotes : undefined,

@@ -46,7 +46,9 @@ export function getSchoolPlaybook(
 const REAPPLICATION_KEYS = new Set(["columbia", "wharton", "tuck"]);
 
 // Prior-cycle essay work for this school (knowledge/prior-essays/<key>.md).
-export function priorEssaysBlock(school: string): string {
+// Chris-profile only — these are his essays.
+export function priorEssaysBlock(school: string, profile?: string): string {
+  if (profile !== "chris") return "";
   const key = matchSchoolKey(school);
   if (!key) return "";
   let text: string;
@@ -67,7 +69,9 @@ export function priorEssaysBlock(school: string): string {
 // Standing strategic context about the candidate (knowledge/candidate.md):
 // application history, reapplicant status, positioning thesis. Injected
 // alongside the form profile so every stage reasons with the full picture.
-export function candidateContextBlock(): string {
+// Chris-profile only — guests never see another person's dossier.
+export function candidateContextBlock(profile?: string): string {
+  if (profile !== "chris") return "";
   try {
     const text = fs.readFileSync(
       path.join(process.cwd(), "knowledge", "candidate.md"),
