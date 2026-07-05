@@ -105,6 +105,17 @@ standalone "SSA growth investing via MBB" — that exact framing is retired.
   missing commercial toolkit + brand. US MBA over international; get Africa
   depth via programming (Lauder, HBS Africa, Stanford Seed), not domicile.
 
+## Prior-cycle essays on file (knowledge/prior-essays/)
+- Full essay sets actually submitted last cycle to: Columbia, Tuck, Booth,
+  Duke Fuqua, and Vanderbilt Owen. Auto-injected when the target school
+  matches — they are the side-by-side record for reapplications and authentic
+  voice samples.
+- Story inventory already used last cycle (reference, don't repeat verbatim):
+  Jacques / cinderblock home outside Yaoundé (origin story — the CBS
+  reapplicant essay deliberately calls it back); Lauren / All-American
+  10-Miler inclusion decision; strategic-support-unit advising on parachute
+  assaults; AI-integration projects (then underdeveloped — now the lead).
+
 ## Standing voice discipline (apply to ALL application materials)
 - Anti-AI-detection rules: **no em-dashes**; never use "leverage" or
   "spearhead"; varied sentence rhythm (mix short punchy sentences with longer

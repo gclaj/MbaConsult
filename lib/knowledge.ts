@@ -13,26 +13,48 @@ const ALIASES: Record<string, string[]> = {
   booth: ["booth", "uchicago", "university of chicago", "chicago"],
   kellogg: ["kellogg", "northwestern"],
   duke: ["duke", "fuqua"],
+  owen: ["owen", "vanderbilt"],
 };
+
+function matchSchoolKey(school: string): string | null {
+  const q = (school || "").toLowerCase();
+  for (const [key, aliases] of Object.entries(ALIASES)) {
+    if (aliases.some((a) => q.includes(a))) return key;
+  }
+  return null;
+}
 
 export function getSchoolPlaybook(
   school: string,
 ): { key: string; text: string } | null {
-  const q = (school || "").toLowerCase();
-  for (const [key, aliases] of Object.entries(ALIASES)) {
-    if (aliases.some((a) => q.includes(a))) {
-      try {
-        const text = fs.readFileSync(
-          path.join(process.cwd(), "knowledge", `${key}.md`),
-          "utf-8",
-        );
-        return { key, text };
-      } catch {
-        return null;
-      }
-    }
+  const key = matchSchoolKey(school);
+  if (!key) return null;
+  try {
+    const text = fs.readFileSync(
+      path.join(process.cwd(), "knowledge", `${key}.md`),
+      "utf-8",
+    );
+    return { key, text };
+  } catch {
+    return null;
   }
-  return null;
+}
+
+// Essays actually submitted to this school in the prior cycle
+// (knowledge/prior-essays/<key>.md). What the AdCom has already read.
+export function priorEssaysBlock(school: string): string {
+  const key = matchSchoolKey(school);
+  if (!key) return "";
+  let text: string;
+  try {
+    text = fs.readFileSync(
+      path.join(process.cwd(), "knowledge", "prior-essays", `${key}.md`),
+      "utf-8",
+    );
+  } catch {
+    return "";
+  }
+  return `\nPRIOR-CYCLE ESSAYS — the essays the candidate actually submitted to THIS school last year. This is what the AdCom has already read; for reapplications the new materials are read side-by-side with these. Rules: maintain consistency of character and goals-evolution (refine, never reverse); never recycle sentences or scenes verbatim — reference or build on them instead; know which stories this AdCom has already seen so new materials add NEW evidence rather than repeating. These essays are also authentic samples of the candidate's real essay voice:\n<prior_essays>\n${text}\n</prior_essays>\n`;
 }
 
 // Standing strategic context about the candidate (knowledge/candidate.md):

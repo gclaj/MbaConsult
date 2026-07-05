@@ -1,5 +1,9 @@
 import { anthropic, MODEL, sseEncode } from "@/lib/anthropic";
-import { candidateContextBlock, playbookBlock } from "@/lib/knowledge";
+import {
+  candidateContextBlock,
+  playbookBlock,
+  priorEssaysBlock,
+} from "@/lib/knowledge";
 import {
   candidateSummary,
   essaySystem,
@@ -44,7 +48,7 @@ export async function POST(req: Request) {
       : "";
 
   const userContent = `${fitContextBlock(intel, fit)}
-${playbookBlock(intel.school)}${notesBlock(body.notes)}
+${playbookBlock(intel.school)}${priorEssaysBlock(intel.school)}${notesBlock(body.notes)}
 ${candidateSummary(candidate)}
 ${candidateContextBlock()}
 

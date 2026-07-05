@@ -1,5 +1,9 @@
 import { anthropic, MODEL, parseStructured } from "@/lib/anthropic";
-import { candidateContextBlock, playbookBlock } from "@/lib/knowledge";
+import {
+  candidateContextBlock,
+  playbookBlock,
+  priorEssaysBlock,
+} from "@/lib/knowledge";
 import { candidateSummary, FIT_SYSTEM, notesBlock } from "@/lib/prompts";
 import { FIT_PROFILE_SCHEMA } from "@/lib/schemas";
 import type { CandidateProfile, FitProfile, SchoolIntel } from "@/lib/types";
@@ -34,7 +38,7 @@ ${dossier}
 
 STRUCTURED SCHOOL DATA:
 ${JSON.stringify(intel, null, 1)}
-${playbookBlock(intel.school)}${notesBlock(notes)}
+${playbookBlock(intel.school)}${priorEssaysBlock(intel.school)}${notesBlock(notes)}
 ${candidateSummary(candidate)}
 ${candidateContextBlock()}
 
