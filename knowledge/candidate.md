@@ -106,10 +106,11 @@ standalone "SSA growth investing via MBB" — that exact framing is retired.
   depth via programming (Lauder, HBS Africa, Stanford Seed), not domicile.
 
 ## Prior-cycle essays on file (knowledge/prior-essays/)
-- Full essay sets actually submitted last cycle to: Columbia, Tuck, Booth,
-  Duke Fuqua, and Vanderbilt Owen. Auto-injected when the target school
-  matches — they are the side-by-side record for reapplications and authentic
-  voice samples.
+- Full prior-cycle essay sets on file for: Columbia, Tuck, Booth, Duke Fuqua,
+  Vanderbilt Owen, and Wharton (Wharton set may be drafts — confirm whether it
+  was submitted; if submitted, Wharton is also a reapplication and its
+  reapplicant rules apply). Auto-injected when the target school matches —
+  the side-by-side record for reapplications and authentic voice samples.
 - Story inventory already used last cycle (reference, don't repeat verbatim):
   Jacques / cinderblock home outside Yaoundé (origin story — the CBS
   reapplicant essay deliberately calls it back); Lauren / All-American
