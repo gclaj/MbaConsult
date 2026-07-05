@@ -171,7 +171,17 @@ export default function StepResearch() {
                   Median base: {intel.employmentReport.medianBaseSalary}
                 </span>
               )}
-              {intel.employmentReport.topIndustries.slice(0, 5).map((x) => (
+              {intel.employmentReport.employmentRate && (
+                <span className="pill">
+                  Employed: {intel.employmentReport.employmentRate}
+                </span>
+              )}
+              {(intel.employmentReport.industryBreakdown?.length
+                ? intel.employmentReport.industryBreakdown
+                    .slice(0, 6)
+                    .map((b) => `${b.industry} ${b.pctOfClass}`)
+                : intel.employmentReport.topIndustries.slice(0, 5)
+              ).map((x) => (
                 <span className="pill" key={x}>
                   {x}
                 </span>

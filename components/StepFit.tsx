@@ -100,6 +100,83 @@ export default function StepFit() {
             <p className="progress-note">Hover a dimension for the rationale.</p>
           </div>
 
+          {fit.careerPathAnalysis && (
+            <div className="card">
+              <h2>Career trajectory × {state.intel?.school} employment report</h2>
+              <p className="sub">
+                Your projected paths, cross-referenced against where this
+                school actually places graduates.
+              </p>
+              <div
+                className="eval-box strong"
+                style={{ marginTop: 0, marginBottom: 16 }}
+              >
+                <p>
+                  <span className="eval-label">Recommended path at this school</span>
+                  <br />
+                  <b>{fit.careerPathAnalysis.recommendedPath}</b>
+                </p>
+                <p>{fit.careerPathAnalysis.recommendationRationale}</p>
+              </div>
+              {fit.careerPathAnalysis.paths.map((p) => (
+                <div key={p.path} style={{ marginBottom: 14 }}>
+                  <b>{p.path}</b>
+                  <div className="dim-row">
+                    <div className="dim-name">School pipeline strength</div>
+                    <div className="dim-bar">
+                      <div
+                        className="dim-fill"
+                        style={{
+                          width: `${p.pipelineStrength}%`,
+                          background: scoreColor(p.pipelineStrength),
+                        }}
+                      />
+                    </div>
+                    <div className="dim-score">{p.pipelineStrength}</div>
+                  </div>
+                  <div className="dim-row">
+                    <div className="dim-name">Your background alignment</div>
+                    <div className="dim-bar">
+                      <div
+                        className="dim-fill"
+                        style={{
+                          width: `${p.backgroundAlignment}%`,
+                          background: scoreColor(p.backgroundAlignment),
+                        }}
+                      />
+                    </div>
+                    <div className="dim-score">{p.backgroundAlignment}</div>
+                  </div>
+                  <div className="dim-row">
+                    <div className="dim-name">
+                      <b>Overall viability</b>
+                    </div>
+                    <div className="dim-bar">
+                      <div
+                        className="dim-fill"
+                        style={{
+                          width: `${p.overallViability}%`,
+                          background: scoreColor(p.overallViability),
+                        }}
+                      />
+                    </div>
+                    <div className="dim-score">{p.overallViability}</div>
+                  </div>
+                  <p style={{ margin: "4px 0", fontSize: 13.5 }}>{p.rationale}</p>
+                  <p
+                    style={{
+                      margin: "4px 0",
+                      fontSize: 12.5,
+                      color: "var(--muted)",
+                    }}
+                  >
+                    Employment-report evidence: {p.evidence}
+                  </p>
+                </div>
+              ))}
+            </div>
+          )}
+
           <div className="card">
             <h3 style={{ marginTop: 0 }}>Strengths to lead with</h3>
             <ul className="tight">

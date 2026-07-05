@@ -45,8 +45,15 @@ export interface SchoolIntel {
   };
   employmentReport: {
     medianBaseSalary: string;
+    employmentRate: string;
     topIndustries: string[];
     topEmployers: string[];
+    industryBreakdown?: {
+      industry: string;
+      pctOfClass: string;
+      medianBase: string;
+    }[];
+    functionBreakdown?: { function: string; pctOfClass: string }[];
     notes: string;
   };
   institutesAndCenters: { name: string; description: string }[];
@@ -69,10 +76,27 @@ export interface EssayStrategy {
   storyTypesNeeded: string[];
 }
 
+export interface CareerPathOption {
+  path: string;
+  pipelineStrength: number;
+  backgroundAlignment: number;
+  overallViability: number;
+  evidence: string;
+  rationale: string;
+}
+
+export interface CareerPathAnalysis {
+  paths: CareerPathOption[];
+  recommendedPath: string;
+  recommendationRationale: string;
+}
+
 export interface FitProfile {
   overallScore: number;
   verdict: string;
   summary: string;
+  // optional so fit profiles saved before this feature still render
+  careerPathAnalysis?: CareerPathAnalysis;
   dimensions: FitDimension[];
   strengths: string[];
   gaps: string[];

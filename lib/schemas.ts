@@ -57,11 +57,42 @@ export const SCHOOL_INTEL_SCHEMA = {
       type: "object",
       properties: {
         medianBaseSalary: str,
+        employmentRate: str,
         topIndustries: strArr,
         topEmployers: strArr,
+        industryBreakdown: {
+          type: "array",
+          items: {
+            type: "object",
+            properties: {
+              industry: str,
+              pctOfClass: str,
+              medianBase: str,
+            },
+            required: ["industry", "pctOfClass", "medianBase"],
+            additionalProperties: false,
+          },
+        },
+        functionBreakdown: {
+          type: "array",
+          items: {
+            type: "object",
+            properties: { function: str, pctOfClass: str },
+            required: ["function", "pctOfClass"],
+            additionalProperties: false,
+          },
+        },
         notes: str,
       },
-      required: ["medianBaseSalary", "topIndustries", "topEmployers", "notes"],
+      required: [
+        "medianBaseSalary",
+        "employmentRate",
+        "topIndustries",
+        "topEmployers",
+        "industryBreakdown",
+        "functionBreakdown",
+        "notes",
+      ],
       additionalProperties: false,
     },
     institutesAndCenters: {
@@ -103,6 +134,38 @@ export const FIT_PROFILE_SCHEMA = {
     overallScore: { type: "integer" },
     verdict: str,
     summary: str,
+    careerPathAnalysis: {
+      type: "object",
+      properties: {
+        paths: {
+          type: "array",
+          items: {
+            type: "object",
+            properties: {
+              path: str,
+              pipelineStrength: { type: "integer" },
+              backgroundAlignment: { type: "integer" },
+              overallViability: { type: "integer" },
+              evidence: str,
+              rationale: str,
+            },
+            required: [
+              "path",
+              "pipelineStrength",
+              "backgroundAlignment",
+              "overallViability",
+              "evidence",
+              "rationale",
+            ],
+            additionalProperties: false,
+          },
+        },
+        recommendedPath: str,
+        recommendationRationale: str,
+      },
+      required: ["paths", "recommendedPath", "recommendationRationale"],
+      additionalProperties: false,
+    },
     dimensions: {
       type: "array",
       items: {
@@ -138,6 +201,7 @@ export const FIT_PROFILE_SCHEMA = {
     "overallScore",
     "verdict",
     "summary",
+    "careerPathAnalysis",
     "dimensions",
     "strengths",
     "gaps",
