@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useStore } from "@/lib/store";
 import { streamRequest } from "@/lib/stream";
 import type { SchoolIntel } from "@/lib/types";
@@ -11,7 +11,17 @@ export default function StepResearch() {
   const [status, setStatus] = useState("");
   const [error, setError] = useState("");
   const [liveText, setLiveText] = useState("");
+  const [playbook, setPlaybook] = useState<string | null>(null);
   const boxRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    fetch(
+      `/api/playbook?school=${encodeURIComponent(state.candidate.targetSchool)}`,
+    )
+      .then((r) => r.json())
+      .then((d) => setPlaybook(d.match))
+      .catch(() => setPlaybook(null));
+  }, [state.candidate.targetSchool]);
 
   const run = async () => {
     setRunning(true);
@@ -63,6 +73,13 @@ export default function StepResearch() {
           Profile, employment report, institutes & centers, clubs, culture, and
           ClearAdmit / AdCom commentary. Takes a few minutes.
         </p>
+        {playbook && (
+          <p className="status-line" style={{ color: "var(--green)" }}>
+            ✓ Built-in application playbook found for this school — its insider
+            guidance (brand traits, essay traps, AdCom signals) will be woven
+            into the research, fit analysis, interview, and essays.
+          </p>
+        )}
         {!running && (
           <button className="primary" onClick={run}>
             {intel ? "Re-run research" : "Start research"}

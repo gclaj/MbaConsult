@@ -1,4 +1,5 @@
 import { anthropic, MODEL, sseEncode } from "@/lib/anthropic";
+import { playbookBlock } from "@/lib/knowledge";
 import {
   candidateSummary,
   essaySystem,
@@ -43,7 +44,7 @@ export async function POST(req: Request) {
       : "";
 
   const userContent = `${fitContextBlock(intel, fit)}
-${notesBlock(body.notes)}
+${playbookBlock(intel.school)}${notesBlock(body.notes)}
 ${candidateSummary(candidate)}
 
 ACCEPTED STORIES FROM THE DISCOVERY INTERVIEW (primary raw material — prefer stories tagged to this essay, but borrow details from others where they strengthen the narrative without duplicating content across essays):

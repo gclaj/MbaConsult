@@ -30,6 +30,16 @@ live web search.
 
 All progress is saved in your browser (localStorage).
 
+## Built-in application playbooks
+
+`knowledge/` holds per-school playbooks (from the owner's MBA master research
+doc): Tuck, Columbia, Wharton, Booth, Kellogg, and Duke Fuqua. When the target
+school matches one, its insider guidance — the brand traits the AdCom screens
+for, essay-by-essay advice and traps, interview/recommendation strategy — is
+automatically injected into the research extraction, fit analysis, story
+interview, and essay generation. Add more schools by dropping a `<key>.md`
+file in `knowledge/` and registering aliases in `lib/knowledge.ts`.
+
 ## Setup
 
 ```bash

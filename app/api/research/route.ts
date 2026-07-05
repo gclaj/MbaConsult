@@ -1,4 +1,5 @@
 import { anthropic, MODEL, parseStructured, sseEncode } from "@/lib/anthropic";
+import { getSchoolPlaybook } from "@/lib/knowledge";
 import { RESEARCH_SYSTEM } from "@/lib/prompts";
 import { SCHOOL_INTEL_SCHEMA } from "@/lib/schemas";
 import type { SchoolIntel } from "@/lib/types";
@@ -67,10 +68,22 @@ export async function POST(req: Request) {
           .map((b) => b.text)
           .join("\n");
 
-        // Phase 2: convert the dossier into structured SchoolIntel JSON.
+        // Phase 2: convert the dossier into structured SchoolIntel JSON,
+        // enriched with the built-in application playbook when we have one
+        // for this school.
+        const playbook = getSchoolPlaybook(school);
         controller.enqueue(
-          sseEncode({ type: "status", text: "Structuring the dossier…" }),
+          sseEncode({
+            type: "status",
+            text: playbook
+              ? "Structuring the dossier + built-in application playbook…"
+              : "Structuring the dossier…",
+          }),
         );
+
+        const playbookSection = playbook
+          ? `\n\nAlso incorporate this application playbook — the candidate's deep knowledge base for this school. Fold its brand traits and fit signals into cultureAndValues, its AdCom guidance into adcomInsights, and its essay-by-essay advice into applicationTips and each essay's guidance field:\n<playbook>\n${playbook.text}\n</playbook>`
+          : "";
 
         const extraction = anthropic.messages.stream({
           model: MODEL,
@@ -81,7 +94,7 @@ export async function POST(req: Request) {
           messages: [
             {
               role: "user",
-              content: `Convert this MBA program research dossier into the structured format. Preserve essay prompts verbatim with their word limits. Keep all named institutes, centers, clubs, culture keywords, AdCom insights, and source URLs. Use empty strings or empty arrays for anything genuinely unknown.\n\n<dossier>\n${dossier}\n</dossier>`,
+              content: `Convert this MBA program research dossier into the structured format. Preserve essay prompts verbatim with their word limits. Keep all named institutes, centers, clubs, culture keywords, AdCom insights, and source URLs. Use empty strings or empty arrays for anything genuinely unknown.\n\n<dossier>\n${dossier}\n</dossier>${playbookSection}`,
             },
           ],
         });
