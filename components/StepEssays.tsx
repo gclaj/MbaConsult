@@ -40,6 +40,7 @@ function EssayCard({ essay }: { essay: EssayPrompt }) {
           intel: state.intel,
           fit: state.fit,
           stories: state.stories,
+          notes: state.notes,
           essay,
           previousDraft: revise ? draft?.text : undefined,
           revisionNotes: revise ? revisionNotes : undefined,

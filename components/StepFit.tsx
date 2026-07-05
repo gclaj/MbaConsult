@@ -25,6 +25,7 @@ export default function StepFit() {
           candidate: state.candidate,
           intel: state.intel,
           dossier: state.dossier,
+          notes: state.notes,
         }),
       });
       const data = await res.json();

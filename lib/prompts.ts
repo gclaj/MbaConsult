@@ -81,6 +81,13 @@ FIT PROFILE:
 ${JSON.stringify(fit, null, 1)}`;
 }
 
+// Free-form research the candidate gathered themselves (consultant guidance,
+// admissions events, coffee chats, subscription research they have access to).
+export function notesBlock(notes: string | undefined): string {
+  if (!notes?.trim()) return "";
+  return `\nCANDIDATE'S OWN RESEARCH & CONSULTANT NOTES (treat as high-signal insider context on what this school wants — reconcile against the dossier and weigh it heavily where specific):\n${notes.trim()}\n`;
+}
+
 export function storiesBlock(stories: Story[]): string {
   return stories
     .map(

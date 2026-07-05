@@ -34,6 +34,7 @@ export default function StepInterview() {
           candidate: state.candidate,
           intel: state.intel,
           fit: state.fit,
+          notes: state.notes,
         }),
       });
       const data = await res.json();
@@ -63,6 +64,7 @@ export default function StepInterview() {
           candidate: state.candidate,
           intel: state.intel,
           fit: state.fit,
+          notes: state.notes,
           question,
           answer,
           priorAttempt,

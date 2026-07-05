@@ -41,6 +41,7 @@ export interface AppState {
   step: number;
   candidate: CandidateProfile;
   dossier: string;
+  notes: string;
   intel: SchoolIntel | null;
   fit: FitProfile | null;
   questions: InterviewQuestion[];
@@ -52,6 +53,7 @@ const INITIAL: AppState = {
   step: 0,
   candidate: EMPTY_CANDIDATE,
   dossier: "",
+  notes: "",
   intel: null,
   fit: null,
   questions: [],

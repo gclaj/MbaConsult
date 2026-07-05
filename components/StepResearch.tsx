@@ -82,6 +82,23 @@ export default function StepResearch() {
         )}
       </div>
 
+      <div className="card">
+        <h2>Your own research & consultant notes (optional)</h2>
+        <p className="sub">
+          Paste anything you’ve gathered yourself — takeaways from ApplicantLab
+          or other consultants (from your own account, for your own use),
+          admissions-event notes, coffee-chat intel, current-student advice.
+          It gets woven into the fit analysis, interview questions, and essays
+          alongside the dossier.
+        </p>
+        <textarea
+          style={{ minHeight: 120 }}
+          value={state.notes}
+          onChange={(e) => update({ notes: e.target.value })}
+          placeholder="e.g. “Their AdCom director said they read the goals essay first…”, “ApplicantLab notes that this school penalizes generic ‘why MBA’ answers…”"
+        />
+      </div>
+
       {intel && !running && (
         <>
           <div className="card">

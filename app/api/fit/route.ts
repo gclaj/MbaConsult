@@ -1,5 +1,5 @@
 import { anthropic, MODEL, parseStructured } from "@/lib/anthropic";
-import { candidateSummary, FIT_SYSTEM } from "@/lib/prompts";
+import { candidateSummary, FIT_SYSTEM, notesBlock } from "@/lib/prompts";
 import { FIT_PROFILE_SCHEMA } from "@/lib/schemas";
 import type { CandidateProfile, FitProfile, SchoolIntel } from "@/lib/types";
 
@@ -7,10 +7,11 @@ export const runtime = "nodejs";
 export const maxDuration = 300;
 
 export async function POST(req: Request) {
-  const { candidate, intel, dossier } = (await req.json()) as {
+  const { candidate, intel, dossier, notes } = (await req.json()) as {
     candidate: CandidateProfile;
     intel: SchoolIntel;
     dossier: string;
+    notes?: string;
   };
 
   try {
@@ -32,7 +33,7 @@ ${dossier}
 
 STRUCTURED SCHOOL DATA:
 ${JSON.stringify(intel, null, 1)}
-
+${notesBlock(notes)}
 ${candidateSummary(candidate)}
 
 Produce the complete fit profile. Include one essayStrategy entry for EVERY essay in the structured school data, using the exact essay title.`,

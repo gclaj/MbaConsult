@@ -3,6 +3,7 @@ import {
   candidateSummary,
   EVALUATION_SYSTEM,
   fitContextBlock,
+  notesBlock,
   QUESTIONS_SYSTEM,
 } from "@/lib/prompts";
 import { EVALUATION_SCHEMA, QUESTIONS_SCHEMA } from "@/lib/schemas";
@@ -22,6 +23,7 @@ interface InterviewRequest {
   candidate: CandidateProfile;
   intel: SchoolIntel;
   fit: FitProfile;
+  notes?: string;
   question?: InterviewQuestion;
   answer?: string;
   priorAttempt?: { answer: string; pushback: string };
@@ -44,7 +46,7 @@ export async function POST(req: Request) {
           {
             role: "user",
             content: `${fitContextBlock(body.intel, body.fit)}
-
+${notesBlock(body.notes)}
 ${candidateSummary(body.candidate)}
 
 Generate the story-discovery questions. Use the exact essay titles from the dossier's essays array as essayTitle.`,
@@ -74,7 +76,7 @@ Generate the story-discovery questions. Use the exact essay titles from the doss
           {
             role: "user",
             content: `${fitContextBlock(body.intel, body.fit)}
-
+${notesBlock(body.notes)}
 ${candidateSummary(body.candidate)}
 
 INTERVIEW QUESTION (essay: ${body.question.essayTitle})

@@ -3,6 +3,7 @@ import {
   candidateSummary,
   essaySystem,
   fitContextBlock,
+  notesBlock,
   storiesBlock,
 } from "@/lib/prompts";
 import type {
@@ -21,6 +22,7 @@ interface EssayRequest {
   intel: SchoolIntel;
   fit: FitProfile;
   stories: Story[];
+  notes?: string;
   essay: EssayPrompt;
   previousDraft?: string;
   revisionNotes?: string;
@@ -41,7 +43,7 @@ export async function POST(req: Request) {
       : "";
 
   const userContent = `${fitContextBlock(intel, fit)}
-
+${notesBlock(body.notes)}
 ${candidateSummary(candidate)}
 
 ACCEPTED STORIES FROM THE DISCOVERY INTERVIEW (primary raw material — prefer stories tagged to this essay, but borrow details from others where they strengthen the narrative without duplicating content across essays):
