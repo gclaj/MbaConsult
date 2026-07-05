@@ -248,6 +248,10 @@ Open fills before submission:
 1. Which thesis governs at NON-Columbia schools — A (regulated-enterprise AI)
    vs B (critical minerals/Africa external-affairs)? Columbia is locked to the
    bridged critical-minerals spine; other schools still need the call.
+   Signal (not yet confirmed): Chris re-shared the Thesis A session most
+   recently, suggesting it is front-of-mind as the governing thesis — lean
+   Thesis A for non-Columbia schools when a recommendation is needed, but
+   flag it as unconfirmed.
 2. Realized retake score → final school list; then fill the CBS essay's score
    placeholder and choose whether to lead with quant.
 3. Identity-framing confirmation (guardrail above).
