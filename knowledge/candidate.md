@@ -53,14 +53,16 @@ current-but-evolving.
   operational AI wins) — a broadening from defense AI to institutional AI
   transformation — never a repudiation of the prior story.
 
-## Columbia status — CONFLICTING RECORDS, confirm with the candidate
-- One session records: waitlisted, then rejected off the waitlist → reapplying
-  in Round 1 (treat as a reapplication: demonstrate concrete growth since the
-  prior attempt).
-- The later session references an ACTIVE CBS waitlist (with guidance not to
-  whiplash the narrative in waitlist letters).
-- Either way the essay/interview posture is the same: lead with what has
-  materially changed and grown since the original application.
+## Columbia status — RESOLVED: rejected off the waitlist, reapplying Round 1
+- Waitlisted at Columbia, then rejected off the waitlist. Chris reads the
+  waitlist as validation of M7-competitive material, not a disqualifying signal.
+- Columbia is therefore a full ROUND 1 REAPPLICATION: reapplicant essays, a
+  complete new package, and explicit demonstration of concrete growth since the
+  prior attempt (new operational AI evidence: MWI publications, JRTC 26-06,
+  planning-cell scaling, $22M automation; sharper post-MBA goal).
+- The consistency caution still applies: frame the evolved goal as growth
+  anchored to new evidence — a broadening from defense AI to institutional AI
+  transformation — never a repudiation of the prior application's character.
 
 ## Target school set
 - Columbia (reapply or waitlist-convert), Tuck, possibly Wharton (pending GMAT).
