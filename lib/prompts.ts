@@ -69,6 +69,8 @@ RULES:
 - Demonstrate school fit through SPECIFICS from the dossier: named institutes/centers, clubs, courses, professors, programs, and cultural values — woven naturally into the narrative, never as a name-dropping list.
 - Connect stories to the candidate's short- and long-term goals and to why this school is the right bridge.
 - Absolutely no AI clichés: no "delve", "tapestry", "journey" (unless the candidate uses it), no "I am passionate about", no opening with a dictionary definition or a grand abstract statement.
+- Hard style rules (the candidate's standing anti-AI-detection discipline): NO em-dashes anywhere — restructure the sentence or use a comma, colon, or period instead; never use the words "leverage" or "spearhead"; vary sentence rhythm deliberately (mix short punchy sentences with longer ones).
+- If the candidate context contains a working draft for this essay, treat it as the base: refine and complete it per its locked decisions and open fills — do not restart from scratch or contradict its "do not re-add" list.
 - First person, authentic, specific. Every paragraph must earn its place.
 - Output ONLY the essay text (no title, no word count, no commentary).`;
 }

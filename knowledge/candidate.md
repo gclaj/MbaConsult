@@ -3,11 +3,16 @@
 Merged from five advising sessions (all ~July 2026). Two precedence rulings:
 (1) COLUMBIA STATUS: rejected off the waitlist → full Round 1 reapplication
 (sessions referencing an "active waitlist" predate the final decision).
-(2) CAREER THESIS: two distinct landing points remain LIVE and unreconciled —
-Thesis A (regulated-enterprise AI transformation) and Thesis B (defense economy
-× African critical minerals × AI). Do not silently pick one: the fit analysis
-should evaluate BOTH against each target school and recommend which to lead
-with; essays for a given school must run on ONE spine. The superseded idea is
+(2) CAREER THESIS: two distinct landing points remain LIVE for schools other
+than Columbia — Thesis A (regulated-enterprise AI transformation) and Thesis B
+(defense economy × African critical minerals × AI). The fit analysis should
+evaluate BOTH against each target school and recommend which to lead with;
+essays for a given school must run on ONE spine. **For COLUMBIA the spine is
+LOCKED** (see the CBS Reapplicant Essay section): immediate goal BCG-type
+consulting, long-term goal AI-enabled transformation of critical-mineral
+supply chains through Francophone Africa — a Thesis-B-flavored refinement of
+the prior application's goal, chosen because CBS reads reapplications
+side-by-side and rewards refinement, never reversal. The superseded idea is
 standalone "SSA growth investing via MBB" — that exact framing is retired.
 
 ## Hard profile (the numbers the AdCom sees)
@@ -23,26 +28,36 @@ standalone "SSA growth investing via MBB" — that exact framing is retired.
   Focus 695–705 (classic ~740–750); Columbia/Booth/Kellogg/MIT Focus 685–695
   (~730–740); Tuck/Darden/Georgetown Focus 665–685. GRE is an accepted
   alternative if a diagnostic shows stronger quant there.
-- Quant-readiness offsets already built (soft signals): MBA Math ~95%, HBS
-  CORe (Pass with Honors), Engineer-in-Training, West Point engineering rigor.
+- Quant-readiness offsets already built (soft signals): MBA Math **93%**
+  average, HBS CORe (Pass with Honors), and **FE exam passed → Engineer-in-
+  Training (EIT)** — frame as a proctored, 8-hour applied-quant exam; arguably
+  a stronger signal than CORe because externally proctored. Plus West Point
+  engineering rigor.
 - Military test waivers (Darden, Georgetown, Marshall) are a TRAP for this
   candidate — a strong recent quant score is his best GPA rebuttal. Fallback only.
 
 ## Background & evidence base (raw material for stories)
-- Active-duty U.S. Army Infantry Captain; Company Commander, Dog Company,
-  2-506 IN, 3BCT, 101st Airborne (Air Assault), Fort Campbell. Brigade
+- Active-duty U.S. Army Infantry Captain; Company Commander of a 145-soldier
+  light infantry company (Dog Company, 2-506 IN, 3BCT, 101st Airborne (Air
+  Assault), Fort Campbell). **Ranked #1 of 75 captains** at brigade/division/
+  corps — the primary re-rating event since the last application. Brigade
   Innovation Officer / organizational AI Integration Lead. Ranger-qualified,
-  EIB, top-of-cohort rankings. Planning military transition ~2027.
+  EIB. Planning military transition ~2027.
 - Built the Army's first AI-enabled brigade planning cell: orders production
-  compressed ~73→23 hours, scaled to 31 brigades.
+  compressed ~73→23 hours, scaled to 16 planning cells / 31 brigades worldwide.
+- In command: built three company-level agentic AI systems ($22M equipment
+  accountability automated; training planning rebuilt), adopted by 12 of 15
+  companies in the brigade.
 - Led JRTC Rotation 26-06 — first-of-its-kind multi-domain live-fire
   coordinating defense-tech firms (L3Harris, Auterion, AEVEX).
 - Published via Modern War Institute; the "11R" article catalyzed a Department
   of the Army review to restructure Infantry and establish a drone-warfare
-  career field (proof he changes SYSTEMS, not just units).
+  career field (proof he changes SYSTEMS, not just units). Second MWI article
+  (drone specialization in the infantry, w/ Cody Stewart & Matt Vandawater,
+  pub. 2026-06-17) — lives on the résumé; CUT from the CBS essay.
 - Briefed a senior advisor to the Secretary of the Army; advised the Maven
-  program manager. Palantir AIP Foundations. $22M accountability automation.
-  Agentic-systems work. Post-waitlist: further publications, promotion offer.
+  program manager. Palantir AIP Foundations. Post-waitlist: publications,
+  promotion offer.
 - French fluent (ACTFL Advanced Mid). LDS proselyting/humanitarian mission,
   Republic of Congo / Cameroon, 2017–2019 — lived Francophone Central Africa
   experience YEARS before the region became strategically hot.
@@ -90,6 +105,12 @@ standalone "SSA growth investing via MBB" — that exact framing is retired.
   missing commercial toolkit + brand. US MBA over international; get Africa
   depth via programming (Lauder, HBS Africa, Stanford Seed), not domicile.
 
+## Standing voice discipline (apply to ALL application materials)
+- Anti-AI-detection rules: **no em-dashes**; never use "leverage" or
+  "spearhead"; varied sentence rhythm (mix short punchy sentences with longer
+  ones); nothing that reads machine-written.
+- Note: essay draft v4 above violates the em-dash rule and needs a scrub pass.
+
 ## Narrative craft rules (apply to all essays)
 - Spine pattern: "I turn emerging technology into national advantage at the
   seam where security and resources meet" (Thesis B) or "I make institutions
@@ -127,9 +148,72 @@ standalone "SSA growth investing via MBB" — that exact framing is retired.
   26-06, 11R policy ripple), add a hard academic data point, explicit
   first-choice/yield signal where true, demonstrate growth via NEW evidence
   without repudiating the prior application's character.
-- Columbia anchors: AI ecosystem, Lang Fund, NYC regulated-enterprise density
-  (Thesis A) / SIPA + Center on Global Energy Policy + metals-and-mining
-  finance (Thesis B).
+- CBS reapplicant mechanics: one new 500-word reapplicant essay is the
+  substantive new writing (no full essay-set rewrite); a NEW recommender is
+  required (this cycle: a senior rater, not a peer-rank); most application
+  fields re-filled. CBS reads the reapplication side-by-side with the prior
+  application — refine, never reverse.
+- Columbia anchors (per the locked essay): Foundations of Valuation elective,
+  a named board role with the Artificial Intelligence Club, Africa Business
+  Club, and "why NYC" = recruiting proximity (BCG, Palantir, enterprise-AI
+  firms recruit heavily from CBS).
+
+## CBS Reapplicant Essay — WORKING STATE (draft v4, not yet submitted)
+Prompt (exact, 500-word max): "How have you enhanced your candidacy since your
+previous application? Please detail your progress since you last applied and
+reiterate how you plan to achieve your immediate and long term post-MBA
+professional goals."
+
+Locked strategic decisions for this essay:
+- Spine: "AI is a tool in the hands of an expert." The reason for the MBA is
+  the constant; the post-MBA destination is what sharpened (refinement, not
+  reversal).
+- Immediate goal held identical to prior app: join a firm like BCG for
+  operational/strategic value creation.
+- Long-term goal bridged, not swapped: from "operational transformation inside
+  an Africa-focused PE fund" → "AI-enabled transformation of critical-mineral
+  supply chains running through Francophone Africa."
+- Academics placed structurally central (para 3 of 6) because academics were
+  the ding reason. Do NOT re-litigate the old GPA — new evidence, stated
+  confidently.
+- Rarity through the mission, not the ego ("few officers pair fluency and
+  years in that region with having built AI workflows adopted across the
+  force"). Yaoundé callback deliberately echoes the prior career essay's
+  opening image.
+
+Draft v4 (~475 words — treat as the working draft; refine, do not restart):
+<essay_draft>
+Last year, I told Columbia I had led "high-stakes AI-integration projects." I offered it as evidence. A year of command has turned it into my thesis.
+
+As a brigade innovation officer, I architected the Army's first AI-enabled planning cell, compressing orders generation from 73 hours to 23 — a framework that scaled to 16 planning cells and 31 brigades worldwide. I could have left that work behind when I took command. Instead, leading a 145-soldier infantry company and ranked first of 75 captains in my division, I built three agentic systems into the company, automating $22M in equipment accountability and rebuilding how we plan training, now used by 12 of our 15 companies. Carrying AI from the staff into command produced the insight that reshaped my goals: AI is only as valuable as the expert wielding it. It multiplies a leader who already knows what "right" looks like; it cannot manufacture that judgment. I want this MBA precisely because it builds the expertise AI can't give me.
+
+So I spent this year building the quantitative foundation to use it. Since I last applied, I completed MBA Math with a 93% average and passed the Fundamentals of Engineering exam, earning my Engineer-in-Training certification — a proctored, eight-hour test of applied quantitative reasoning. I am now preparing for the GMAT and will submit an updated score of [7XX, Q XX] this fall. With my HBS CORe honors, these are the proof points of classroom readiness I want Columbia weighing this year.
+
+That work also clarified what I'm capable of. Building those systems showed me I could create impact at a scale and speed I had never reached one person at a time. It reconnected me to the goal I brought to Columbia last year — expanding opportunity in developing economies, a conviction that began in a cinderblock home outside Yaoundé. My immediate goal is unchanged: I'll join a firm like BCG to lead operational and strategic value creation. The long view is sharper. Instead of generalized transformation inside an Africa-focused fund, I now aim at the problem I'm best built to solve: leading AI-enabled transformation of the critical-mineral supply chains running through the Francophone Africa I know firsthand. Few officers pair fluency and years in that region with having built AI workflows adopted across the force; that intersection is what its hardest problems demand.
+
+Columbia is where I build the foundation. I'll take Foundations of Valuation to anchor the financial fluency my operational background lacks, pursue a board role with the Artificial Intelligence Club, and stay active in the Africa Business Club. New York is the reason, not the backdrop: BCG, Palantir, and the enterprise-AI firms I'm targeting recruit heavily from CBS, a subway ride from campus.
+
+I've spent a year proving I can use AI as a tool. I'm reapplying because Columbia is where I'll become the expert who wields it best — the leader I described last year, academically ready and aimed at the problem my background uniquely prepares me to solve.
+</essay_draft>
+
+Deliberate cuts — DO NOT re-add to this essay:
+- Edison Partners pre-MBA internship: NEVER HAPPENED — removed everywhere; the
+  long-term-goal bridge runs through recruiting conversations instead.
+- Second MWI drone article (résumé only).
+- Old GPA re-explanation (prior optional essay handled it; re-litigating reads
+  defensive).
+- Francophone-migrant NYC community-service beat (the Africa thread is carried
+  by the career goal).
+
+Open fills before submission:
+1. GMAT score placeholder [7XX, Q XX] — do not finalize until real; if quant
+   is the standout sub-score, restructure that sentence to LEAD with quant.
+2. Replace "a board role with the Artificial Intelligence Club" with a
+   specific named title (e.g., VP of Programming / VP of Speakers).
+3. Optional: a second named elective ("leading data-driven organizations"
+   type) if research surfaces a strong one. ~25 words of headroom.
+4. STYLE PASS REQUIRED: draft v4 uses em-dashes heavily; scrub to the standing
+   voice discipline before submission (see style rules below).
 
 ## School strategy
 - Fit-to-odds tiers (advisor, Class of 2027 data): Tier 1 **Duke Fuqua**
@@ -161,11 +245,13 @@ standalone "SSA growth investing via MBB" — that exact framing is retired.
   ethics-counselor clearance required before any outside/side-hustle activity.
 
 ## Open questions (surface these when relevant)
-1. **WHICH THESIS GOVERNS** — A (regulated-enterprise AI) vs B (critical
-   minerals/Africa external-affairs)? Biggest unresolved decision; essays
-   cannot run both spines at once.
-2. Retake feasibility + realized score → final school list.
+1. Which thesis governs at NON-Columbia schools — A (regulated-enterprise AI)
+   vs B (critical minerals/Africa external-affairs)? Columbia is locked to the
+   bridged critical-minerals spine; other schools still need the call.
+2. Realized retake score → final school list; then fill the CBS essay's score
+   placeholder and choose whether to lead with quant.
 3. Identity-framing confirmation (guardrail above).
 4. Whether Stanford earns an application slot.
 5. Governing fork: forward-deployed vendor role vs. the MBA.
-6. Edison Partners internship: keep or redirect.
+6. CBS essay open fills: AI Club board title; optional second elective;
+   em-dash style scrub.
