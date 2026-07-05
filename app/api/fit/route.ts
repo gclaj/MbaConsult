@@ -1,5 +1,5 @@
 import { anthropic, MODEL, parseStructured } from "@/lib/anthropic";
-import { playbookBlock } from "@/lib/knowledge";
+import { candidateContextBlock, playbookBlock } from "@/lib/knowledge";
 import { candidateSummary, FIT_SYSTEM, notesBlock } from "@/lib/prompts";
 import { FIT_PROFILE_SCHEMA } from "@/lib/schemas";
 import type { CandidateProfile, FitProfile, SchoolIntel } from "@/lib/types";
@@ -36,6 +36,7 @@ STRUCTURED SCHOOL DATA:
 ${JSON.stringify(intel, null, 1)}
 ${playbookBlock(intel.school)}${notesBlock(notes)}
 ${candidateSummary(candidate)}
+${candidateContextBlock()}
 
 Produce the complete fit profile. Include one essayStrategy entry for EVERY essay in the structured school data, using the exact essay title.`,
         },

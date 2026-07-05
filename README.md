@@ -40,6 +40,11 @@ automatically injected into the research extraction, fit analysis, story
 interview, and essay generation. Add more schools by dropping a `<key>.md`
 file in `knowledge/` and registering aliases in `lib/knowledge.ts`.
 
+`knowledge/candidate.md` holds standing strategic context about the candidate
+(application history, reapplicant status, career thesis, narrative guidance).
+It is injected alongside the profile form into fit analysis, the story
+interview, and essay generation — edit it as your strategy evolves.
+
 ## Setup
 
 ```bash

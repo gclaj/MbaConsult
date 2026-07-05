@@ -1,5 +1,5 @@
 import { anthropic, MODEL, parseStructured } from "@/lib/anthropic";
-import { playbookBlock } from "@/lib/knowledge";
+import { candidateContextBlock, playbookBlock } from "@/lib/knowledge";
 import {
   candidateSummary,
   EVALUATION_SYSTEM,
@@ -49,7 +49,7 @@ export async function POST(req: Request) {
             content: `${fitContextBlock(body.intel, body.fit)}
 ${playbookBlock(body.intel.school)}${notesBlock(body.notes)}
 ${candidateSummary(body.candidate)}
-
+${candidateContextBlock()}
 Generate the story-discovery questions. Use the exact essay titles from the dossier's essays array as essayTitle.`,
           },
         ],
@@ -79,7 +79,7 @@ Generate the story-discovery questions. Use the exact essay titles from the doss
             content: `${fitContextBlock(body.intel, body.fit)}
 ${playbookBlock(body.intel.school)}${notesBlock(body.notes)}
 ${candidateSummary(body.candidate)}
-
+${candidateContextBlock()}
 INTERVIEW QUESTION (essay: ${body.question.essayTitle})
 Question: ${body.question.question}
 Purpose: ${body.question.purpose}

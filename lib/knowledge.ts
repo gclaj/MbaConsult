@@ -35,6 +35,21 @@ export function getSchoolPlaybook(
   return null;
 }
 
+// Standing strategic context about the candidate (knowledge/candidate.md):
+// application history, reapplicant status, positioning thesis. Injected
+// alongside the form profile so every stage reasons with the full picture.
+export function candidateContextBlock(): string {
+  try {
+    const text = fs.readFileSync(
+      path.join(process.cwd(), "knowledge", "candidate.md"),
+      "utf-8",
+    );
+    return `\nCANDIDATE STRATEGIC CONTEXT — standing background on this candidate's application history, positioning strategy, and constraints. If the candidate is a REAPPLICANT to the target school, treat the application as a reapplication: the fit analysis must weigh what has changed since the prior attempt, the interview must surface growth-since-last-application stories, and the essays must demonstrate that growth concretely:\n<candidate_context>\n${text}\n</candidate_context>\n`;
+  } catch {
+    return "";
+  }
+}
+
 export function playbookBlock(school: string): string {
   const playbook = getSchoolPlaybook(school);
   if (!playbook) return "";
