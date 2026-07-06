@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import StepEssays from "@/components/StepEssays";
 import StepFit from "@/components/StepFit";
 import StepInterview from "@/components/StepInterview";
@@ -34,9 +35,34 @@ function stepUnlocked(step: number, state: ReturnType<typeof useStore>["state"])
 
 function Wizard() {
   const { state, update, reset, profile, setProfile } = useStore();
+  const [apiKeyConfigured, setApiKeyConfigured] = useState<boolean | null>(
+    null,
+  );
+
+  useEffect(() => {
+    fetch("/api/health")
+      .then((r) => r.json())
+      .then((d) => setApiKeyConfigured(Boolean(d.apiKeyConfigured)))
+      .catch(() => setApiKeyConfigured(null));
+  }, []);
 
   return (
     <div className="container">
+      {apiKeyConfigured === false && (
+        <div
+          className="card"
+          style={{ borderColor: "var(--red)", marginBottom: 20 }}
+        >
+          <h2 style={{ color: "var(--red)" }}>API key not configured</h2>
+          <p className="sub" style={{ marginBottom: 0 }}>
+            The server has no <code>ANTHROPIC_API_KEY</code>, so research, fit
+            analysis, and essays will fail. On Railway: open your service →
+            <b> Variables</b> → add <code>ANTHROPIC_API_KEY</code> with your
+            key from platform.claude.com, then let it redeploy. Running
+            locally: put it in <code>.env.local</code> and restart.
+          </p>
+        </div>
+      )}
       <header className="app-header">
         <h1 className="logo">
           AdCom<span>Pilot</span>
