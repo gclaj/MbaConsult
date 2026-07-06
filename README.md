@@ -58,6 +58,29 @@ Open http://localhost:3000.
 Requirements: Node 20+, an Anthropic API key with access to Claude Opus 4.8
 and the web search server tool.
 
+## Deploy on Railway
+
+The repo is Railway-ready (`railway.json`; the start script binds Railway's
+`$PORT`). One-time setup:
+
+1. In Railway: **New Project → Deploy from GitHub repo** → select
+   `gclaj/MbaConsult`, branch `claude/mba-essay-generator-kn7nbu` (or your
+   default branch after merging).
+2. In the service → **Variables**, add:
+   `ANTHROPIC_API_KEY = sk-ant-...` (your key — set it here, never in code:
+   GitHub scans for Anthropic keys and they get revoked if committed).
+3. Deploy. Railway builds with `npm run build` and runs `npm run start`.
+   Every push to the connected branch auto-deploys.
+4. Optional: Settings → Networking → **Generate Domain** for a public URL.
+
+Note: long research/essay requests stream for several minutes; Railway's
+always-on server handles this fine (no serverless timeout).
+
+**Access control:** the app has no login. Anyone with the URL can use it and
+spend against your API key — and the Chris profile's context is visible to
+anyone who opens it. Keep the URL private, or ask for basic-auth to be added
+before sharing it.
+
 ## Architecture
 
 - **Next.js 15 (App Router) + TypeScript**, no external UI deps.
